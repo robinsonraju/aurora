@@ -13,43 +13,40 @@
 }
 
 html[data-theme='dark'] {
-  --bg-color:#292a2d;
-  --secondary-bg-color:rgb(119, 119, 122);
-  --heading-color: rgb(169,169,179);
-  --body-color:rgb(169,169,179);
+  --bg-color:#fff;
+  --secondary-bg-color:#eeeeee;
+  --heading-color: #5f5f5f;
+  --body-color: rgba(0, 0, 0, 0.7);
   --post-color: rgba(0, 0, 0, 0.44);
-  --border-color: rgb(38, 38, 38);
-  --pre-bg-color:rgb(33,33,45);
-  --nav-text-color:rgb(191, 191, 191);
-  --tag-color: rgb(191, 191, 191);
-  
+  --border-color: rgba(0, 0, 0, 0.15);
+  --pre-bg-color: #f9f9fd;
+  --nav-text-color:#5a5a5a;
+  --tag-color: #007aa5;
 }
 
 html {
   background-color: var(--bg-color);
   -webkit-font-smoothing: antialiased;
-  
 }
 
 body {
   color: var(--body-color);
-  font-family: 'Verdana', sans-serif;
-  font-size: 15px;
+  font-family: 'Charter', sans-serif;
+  font-size: 14px;
   width: 100%;
   margin: 0 auto 30px auto;
   background-color: var(--bg-color);
 }
 
 p {
-  line-height: 1.9em;
+  line-height: 1.6em;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a {
   text-decoration: none;
 }
-
 
 .category {
   padding: 4px 6px;
@@ -83,9 +80,24 @@ pre {
   margin-right: 5px;
 }
 
-a:link, a:visited {
+a:link {
   opacity: 1;
-  color: var(--tag-color);
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  -o-transition: all .15s linear;
+  -ms-transition: all .15s linear;
+  transition: all .15s linear;
+  color: #007aa5;
+}
+
+a:visited {
+  opacity: 1;
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  -o-transition: all .15s linear;
+  -ms-transition: all .15s linear;
+  transition: all .15s linear;
+  color: #915c83;
 }
 
 a:hover, a:active {
@@ -94,9 +106,12 @@ a:hover, a:active {
 
 /*basic styles ends*/
 /*animation starts*/
-
 .animated {
-  transition: top .8s linear;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
   -ms-animation-duration: 1s;
@@ -114,37 +129,48 @@ a:hover, a:active {
 
 @-webkit-keyframes fadeInDown {
   0% {
+    opacity: 0;
     -webkit-transform: translateY(-20px);
   }
   100% {
+    opacity: 1;
+    background-color: var(--bg-color);
     -webkit-transform: translateY(0);
   }
 }
 @-moz-keyframes fadeInDown {
   0% {
+    opacity: 0;
     -moz-transform: translateY(-20px);
   }
   100% {
+    opacity: 1;
+    background-color: var(--bg-color);
     -moz-transform: translateY(0);
   }
 }
 @-o-keyframes fadeInDown {
   0% {
+    opacity: 0;
     -o-transform: translateY(-20px);
   }
   100% {
+    opacity: 1;
+    background-color: var(--bg-color);
     -o-transform: translateY(0);
   }
 }
 @keyframes fadeInDown {
   0% {
+    opacity: 0;
     transform: translateY(-20px);
   }
   100% {
+    opacity: 1;
+    background-color: var(--bg-color);
     transform: translateY(0);
   }
 }
-
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   -moz-animation-name: fadeInDown;
@@ -156,24 +182,24 @@ a:hover, a:active {
 .content {
   height: auto;
   float: right;
-  width: 60%;
+  width: 75%;
   margin-top: 60px;
 }
 
 .page-top {
-  width: 60%;
+  width: 75%;
   position: fixed;
   right: 0;
   z-index: 3;
   background-color: var(--bg-color);
   height: 60px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 0.5px solid var(--border-color);
 }
 .page-top .nav {
   list-style: none;
   padding: 11px 30px;
   float: left;
-  font-size: 12px;
+  font-size: 18px;
 }
 .page-top .nav li {
   position: relative;
@@ -221,16 +247,17 @@ a:hover, a:active {
 }
 
 .sidebar {
-  width: 40%;
+  width: 25%;
   -webkit-background-size: cover;
   background-size: cover;
   background-color: var(--bg-color);
   height: 100%;
+  transition: 0.8s;
   top: 0;
   left: 0;
   position: fixed;
   z-index: 4;
-  border-right: 1px solid var(--border-color);
+  border-right: 0.5px solid var(--border-color);
 }
 .sidebar .logo-title {
   text-align: center;
@@ -300,7 +327,7 @@ a:hover, a:active {
   color: var(--heading-color);
 }
 .post .post-title h3 {
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 1px;
   line-height: 1;
   font-weight: 600;
@@ -320,18 +347,23 @@ a:hover, a:active {
 .post .post-content a {
   text-decoration: none;
   letter-spacing: 1px;
-  color: #2660ab;
+  color: #007aa5;
 }
 .post .post-content a:hover {
   color: #2F69B3;
 }
 .post .post-content h3 {
+  /*  */
   font-size: 22px;
   font-weight: 600;
 }
 .post .post-content h4 {
   /* color: var(--heading-color); */
   font-size: 16px;
+}
+.post .post-content li {
+  font-size: 15px;
+  line-height: 1.6em;
 }
 .post .post-content img {
   max-width: 100%;
@@ -493,13 +525,13 @@ a:hover, a:active {
 }
 .list-with-title .listing .listing-post .post-time {
   float: right;
-  color: #C5C5C5;
+  color: #007aa5;
 }
 .list-with-title .listing .listing-post a {
-  color: #8F8F8F;
+  color: #007aa5;
 }
 .list-with-title .listing .listing-post a:hover {
-  color: #2660ab;
+  color: #4786D6;
 }
 
 /* share */
@@ -717,6 +749,101 @@ a.btn {
   padding-top: 50px;
 }
 
+/* Table for 2 columns on home page*/
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableCell {
+	border: 0px ;
+	display: table-cell;
+	padding: 0px 10px;
+  scroll-behavior: smooth;
+}
+
+/* 1. Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. Make nav sticky */
+main > nav {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+}
+
+/* 3. ScrollSpy active styles */
+.section-nav li.active > a {
+    font-weight: 500;
+}
+
+/* Sidebar Navigation */
+.section-nav {
+    padding-left: 0;
+    border-left: 1px solid #efefef;
+    float: right;
+}
+
+.section-nav a {
+    text-decoration: none;
+    display: block;
+    padding: .125rem 0;
+    transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+}
+
+.section-nav a:hover,
+.section-nav a:focus {
+    color: #666;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/** page layout **/
+main {
+    display: grid;
+    grid-template-columns: 1fr 15em;
+    max-width: 100em;
+    width: 100%;
+    margin: 0 auto;
+    float: left;
+}
+
+.homeleft {
+  width: 45%;
+  float: left;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.homeright {
+  width: 55%;
+  float: right;
+}
+
+.wrap {
+  display: flex;
+}
+
+.more {
+  font-weight: bold;
+  font-style: italic;
+}
+
+img[alt=githubsearch-bookdata],img[alt=postman-response],img[alt=main-function],img[alt=swagger-ui],img[alt=dostoyevsky] {
+  width: 50%;
+}
+
+img[alt=files-in-the-codebase] {
+  width: 30%;
+  height: 20%;
+}
+
 
 
 @media screen and (max-width: 960px) {
@@ -758,49 +885,36 @@ a.btn {
   .share {
     display: grid;
   }
-}
 
+  .wrap {
+    flex-direction: column-reverse;
+  }
 
-/* Medium zoom */
-.medium-zoom-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 300ms;
-  will-change: opacity;
-  background: var(--bg-color);
-}
+  .homeleft {
+    display: none;
+    width: auto;
+  }
 
-.medium-zoom--opened .medium-zoom-overlay {
-  cursor: pointer;
-  cursor: zoom-out;
-  opacity: 1;
-}
+  .homeright {
+    width: auto;
+  }
 
-.medium-zoom-image {
-  cursor: pointer;
-  cursor: zoom-in;
-  /*
-    The `transition` is marked as "!important" for the animation to happen
-    even though it's overriden by another inline `transition` style attribute.
-    This is problematic with frameworks that generate inline styles on their
-    images (e.g. Gatsby).
-    See https://github.com/francoischalifour/medium-zoom/issues/110
-   */
-  transition: transform 300ms cubic-bezier(0.2, 0, 0.2, 1) !important;
-  z-index: 100;
-}
+  main {
+    display: block;
+    width: 100%;
+  }
 
-.medium-zoom-image--hidden {
-  visibility: hidden;
-}
+  .section-nav {
+    display: none;
+  }
 
-.medium-zoom-image--opened {
-  position: relative;
-  cursor: pointer;
-  cursor: zoom-out;
-  will-change: transform;
+  img[alt=githubsearch-bookdata],img[alt=postman-response],img[alt=main-function],img[alt=swagger-ui],img[alt=dostoyevsky]{
+    width: 50%;
+    height: 50%;
+  }
+
+  img[alt=files-in-the-codebase] {
+    width: 40%;
+    height: 40%;
+  }
 }

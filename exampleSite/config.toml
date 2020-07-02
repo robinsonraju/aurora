@@ -1,8 +1,8 @@
 baseURL = "https://example.com"
 languageCode = "en"
 DefaultContentLanguage = "en"
-title = "Website of Jane Doe"
-theme = "anatole"
+title = "Website of Aurora"
+theme = "aurora"
 summarylength = 10
 enableEmoji = true
 
@@ -13,15 +13,14 @@ enableEmoji = true
 #googleAnalytics = "UA-123-45"
 
 [params]
-title = "I'm Jane Doe"
-author = "Jane Doe"
-description = "Call me Jane"
+title = "I'm Aurora"
+author = "Aurora"
+description = "Call me Aurora"
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
 customCss = []
 mainSections = ["post"]
-images = ["images/site-feature-image.png"]
 
 ## Math settings
 [params.math]
@@ -37,7 +36,7 @@ url = "https://de.linkedin.com/"
 [[params.socialIcons]]
 icon = "fa-github"
 title = "GitHub"
-url = "https://github.com/lxndrblz/anatole/"
+url = "https://github.com/Aurora"
 
 [[params.socialIcons]]
 icon = "fa-instagram"
@@ -47,7 +46,7 @@ url = "https://www.instagram.com/"
 [[params.socialIcons]]
 icon = "fa-envelope"
 title = "e-mail"
-url = "mailto:mail@alexbilz.com"
+url = "mailto:mail@xyz.com"
 
 ## Menu items
 

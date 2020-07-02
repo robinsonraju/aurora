@@ -1,14 +1,18 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "Anatole"
+name = "Aurora"
 license = "MIT"
-licenselink = "https://github.com/lxndrblz/anatole/blob/master/LICENSE"
-description = "Anatole is a beautiful minimalist two-column hugo theme based on farbox-theme-Anatole."
-homepage = "https://github.com/lxndrblz/anatole/"
+licenselink = "https://github.com/robinsonraju/aurora/blob/master/LICENSE"
+description = "Aurora is a beautiful minimalist two-column theme based on hugo theme Anatole."
+homepage = "https://github.com/robinsonraju/aurora"
 tags = ["blog", "responsive", "clean", "minimalist"]
 features = ["blog", "seo", "responsive", "mobile", "disqus", "fontawesome", "analytics", "math"]
-min_version = "0.53.0"
+min_version = "0.1.0"
+
+[author]
+  name = "Robinson Raju"
+  homepage = "https://robinsonraju.info"
 
 [author]
   name = "Alexander Bilz"
@@ -16,6 +20,6 @@ min_version = "0.53.0"
 
 # If porting an existing theme
 [original]
-  author = "Cai Cai"
-  homepage = "https://www.caicai.me/"
-  repo = "https://github.com/hi-caicai/farbox-theme-Anatole"
+  name = "Alexander Bilz"
+  homepage = "https://alexbilz.com"
+  repo = "https://github.com/lxndrblz/anatole"
