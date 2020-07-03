@@ -1,28 +1,21 @@
 {{ define "main" }}
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-  {{ range $paginator.Pages }}
-  <div class="post animated fadeInDown">
-    <div class="post-title">
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </h3>
+  <div class="about animated fadeInDown" style="overflow-x:auto;" >
+    <div class="homeleft" >
+      <h3>Notes Categories</h3>
+        {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+          <li><a href="{{.Permalink}}">{{.Title}}</a></li>
+        {{end}}
     </div>
-    <div class="post-content"><div class="p_part"><p>{{ .Summary }}</p></div>
-  
-  <div class="p_part"><p></p></div></div>
-    <div class="post-footer">
-      <div class="meta">
-        <div class="info"><i class="fa fa-sun-o"></i><span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-          {{ with .Params.tags }}
-          {{- range $index, $el := . -}}
-          <a class="tag" href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
-          {{- end -}}
-          {{ end }}       
-        </div>
-      </div>
+    <div class="homeright">
+      {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+        <h3>{{.Title}}</h3>
+        <ul>
+          {{ range .Pages }}
+            <li>
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{end}}
     </div>
-  </div>
-  {{ end }}
-<div class="pagination">
-  {{ template "_internal/pagination.html" . }}
-</div>
 {{ end }}
