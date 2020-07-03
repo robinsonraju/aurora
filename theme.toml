@@ -14,10 +14,6 @@ min_version = "0.1.0"
   name = "Robinson Raju"
   homepage = "https://robinsonraju.info"
 
-[author]
-  name = "Alexander Bilz"
-  homepage = "https://alexbilz.com"
-
 # If porting an existing theme
 [original]
   name = "Alexander Bilz"
