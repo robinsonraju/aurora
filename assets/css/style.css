@@ -844,7 +844,22 @@ img[alt=files-in-the-codebase] {
   height: 20%;
 }
 
+/* Blockquotes */
+blockquote {
+  border-left: 0.5rem solid;
+  padding-left: 0.75rem;
+}
+blockquote .author {
+  font-size: 0.85rem;
+}
 
+.blockquote_attr {
+  border-left: 0rem ;
+  padding-left: 0rem;
+}
+.blockquote_attr .author {
+  font-weight: bold;
+}
 
 @media screen and (max-width: 960px) {
   .sidebar {

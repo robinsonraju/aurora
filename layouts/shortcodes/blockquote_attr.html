@@ -1,0 +1,19 @@
+{{ $quote := .Inner }}
+
+<blockquote class="blockquote_attr">
+  <p>
+    <i>{{ $quote | markdownify }}</i>
+    &mdash;
+    {{ with (.Get "link") }}
+      <a class="author" href="{{ . }}" target="_blank">
+    {{ end }}
+
+    {{ with (.Get "text") }}
+      {{ . }}</a> by
+    {{ end }}
+
+    {{ with (.Get "author") }}
+      <span class="author"> {{ . }}</span>
+    {{ end }}
+  </p>
+</blockquote>
