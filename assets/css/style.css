@@ -846,7 +846,7 @@ img[alt=files-in-the-codebase] {
 
 /* Blockquotes */
 blockquote {
-  border-left: 0.5rem solid;
+  border-left: 0.1rem solid;
   padding-left: 0.75rem;
 }
 blockquote .author {
